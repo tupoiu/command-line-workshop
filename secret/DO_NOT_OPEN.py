@@ -15,13 +15,12 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python DO_NOT_OPEN.py <secret>")
         sys.exit(1)
-    arg = sys.argv[1]
+    arg = sys.argv[1].strip()
     
     def hash_str(arg):
         # Hash the input using SHA-256
         return hashlib.sha256(arg.encode()).hexdigest()
-    print(hash_str(arg))
-    print(arg)
+
     # Check if the input matches the secret
     if hash_str(arg) == SECRET:
         print("Secret is correct! Unzipping the file...")
