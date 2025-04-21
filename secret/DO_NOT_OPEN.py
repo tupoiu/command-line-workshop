@@ -5,7 +5,7 @@ import zipfile
 import sys
 
 # Define the secret and file paths
-SECRET = "e85135e0bbd21cb76bbd8504d4f0d31dac39e392d03ef50acd588421c2a5d37f"
+SECRET = "aa97302150fce811425cd84537028a5afbe37e3f1362ad45a51d467e17afdc9c"
 ZIP_FILE = "hidden_treasure.zip"
 OUTPUT_PATH = "treasure_chest"
 
@@ -20,7 +20,8 @@ def main():
     def hash_str(arg):
         # Hash the input using SHA-256
         return hashlib.sha256(arg.encode()).hexdigest()
-
+    print(hash_str(arg))
+    print(arg)
     # Check if the input matches the secret
     if hash_str(arg) == SECRET:
         print("Secret is correct! Unzipping the file...")
